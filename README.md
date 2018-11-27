@@ -113,7 +113,21 @@ C-h k    describe-key
 
 
 
-# Sample insect names 
+# Insect name generation
+Created a simple name generator to create insect names, since there will be a lot of insects.
+
+## Building and running generator
+```
+$ mkdir -p target
+$ g++ -o target/generate src/main/cpp/namegeneratortest.cpp
+$ target/generate 
+Name Generator 1.0
+syllables 3 name = Wonkrayfay
+```
+
+## Sample insect names 
+Just a few generated names.
+
 Shimon      
 Izenwonkwonk
 Fayfay      
