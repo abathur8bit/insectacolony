@@ -1,0 +1,1 @@
+../../cxxtest-4.4/bin/cxxtestgen --error-printer -o runner.cpp insecttestsuite.h && g++ -o runner -I../../cxxtest-4.4 runner.cpp beetle.cpp ant.cpp colony.cpp namegenerator.cpp room.cpp util.cpp insect.cpp state.cpp namedentity.cpp && ./runner 
