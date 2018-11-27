@@ -8,6 +8,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Colony hive = new Colony("Alpha Hive");
+        hive.addInsect(new Beetle("Bob"));
+        hive.addInsect(new Beetle("Frank"));
+        hive.update();
     }
 }
