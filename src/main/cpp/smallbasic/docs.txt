@@ -1,0 +1,57 @@
+<--- Token Types --->
+#define DELIMITER       1
+#define VARIABLE        2
+#define NUMBER          3
+#define COMMAND         4
+#define STRING          5
+#define QUOTE           6
+#define LABEL           7
+#define INCLUDE         8
+#define FUNCTION        9
+
+<--- Commands --->
+#define PRINT           1
+#define INPUT           2
+#define IF              3
+#define THEN            4
+#define ELSE	       	5
+#define FOR             6
+#define TO              7
+#define NEXT            8
+#define GOTO            9
+#define SB_EOL             10
+#define SB_FINISHED        11
+#define GOSUB           12
+#define RETURN          13
+#define RAND            14
+#define END             15
+#define CUSTOM          16
+
+<--- Limits --->
+#define NUM_LAB         50
+#define LAB_LEN         100
+#define FOR_NEST        25
+#define SUB_NEST        25
+#define PROG_SIZE       0xFFFF
+#define MAX_COMMANDS    100
+#define MAX_STRING_LENGTH 1024
+
+<--- Errors --->
+  "Syntax error",               //0
+  "Unbalanced parens",          //1
+  "No expression present",      //2
+  "Expected: =",                //3
+  "Not a variable",             //4
+  "Lable table full",           //5
+  "Duplicate label",            //6
+  "Undefined label",            //7
+  "Expected: THEN",             //8
+  "Expected: TO",               //9
+  "Too many nested FOR loops",  //10
+  "NEXT without FOR",           //11
+  "Too many nested GOSUBs",     //12
+  "RETURN without GOSUB",       //13
+  "File not found",             //14
+  "Undefined variable",         //15
+
+  
