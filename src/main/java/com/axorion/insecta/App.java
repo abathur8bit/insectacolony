@@ -11,8 +11,12 @@ public class App
         Colony hive = new Colony("Alpha Hive");
         Room kitchen = new Room("Kitchen");
         hive.addRoom(kitchen);
-        kitchen.addInsect(new Beetle("Bob"));
-        kitchen.addInsect(new Beetle("Frank"));
-        hive.update();
+        hive.addInsectToRoom(new Beetle("Bob"),kitchen);
+        hive.addInsectToRoom(new Beetle("Frank"),kitchen);
+
+        for(int i=0; i<10; i++) {
+            long now = System.currentTimeMillis();
+            hive.update(now);
+        }
     }
 }

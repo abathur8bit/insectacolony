@@ -18,9 +18,6 @@ public class Room extends NamedEntity {
     public Collection<Insect> getInsects() {
         return insects.values();
     }
-    public void update() {
-        for(Insect bug : insects.values()) {
-            bug.update();
-        }
+    public void update(long now) {
     }
 }

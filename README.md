@@ -1,3 +1,11 @@
+New 
+8+ 64GB $699 
+8+ 256GB $849
+7+ 32GB $569
+7+ 128GB $669
+Refurb
+7+ 128GB $469
+
 # Insecta Colony
 A simulated insect civilization. 
 

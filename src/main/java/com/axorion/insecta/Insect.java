@@ -31,7 +31,7 @@ public abstract class Insect extends NamedEntity {
     protected int health;
     protected int hunger;
 
-    public abstract void update();
+    public abstract void update(long now);
 
     public Insect(String name,String type) {
         super(name);
@@ -44,10 +44,30 @@ public abstract class Insect extends NamedEntity {
     public State getState() {
         return state;
     }
+    public void setState(State s) {
+        exitState();
+        state = s;
+        enterState();
+    }
     public void enterState() {
         System.out.println("name=["+getName()+"] entering state=["+getState()+"]");
     }
     public void exitState() {
         System.out.println("name=["+getName()+"] exiting state=["+getState()+"]");
     }
+
+    private void updateSleep(long now) {
+        if(--counter <= 0) {
+            setState(State.WAKING);
+            counter = RandomTool.rnd(1,2);
+        }
+    }
+
+    private void updateWaking(long now) {
+        if(--counter <= 0) {
+            setState(State.HUNGRY);
+        }
+    }
+
+
 }
