@@ -20,54 +20,58 @@ package com.axorion.insecta;
 
 public abstract class Insect extends NamedEntity {
     private String type;
-    protected int counter;
-    protected int counterMax;
-    protected int destinationRoom;
-    protected int currentRoom;
-    protected State state;
+    protected int counter=0;
     protected Colony colony;
+    protected State currentState=null;
 
-    protected int money;
-    protected int health;
-    protected int hunger;
+    protected int money=0;
+    protected int fatigue=0;
+    protected int hunger=0;
 
-    public abstract void update(long now);
+    protected Room.Name currRoomNum;      //currently located room
 
     public Insect(String name,String type) {
         super(name);
         this.type = type;
-        state = State.SLEEPING;
+    }
+    public void update(long now) {
+        hunger++;
+        if(currentState != null) {
+            currentState.execute(this);
+        }
     }
     public String getType() {
         return type;
     }
-    public State getState() {
-        return state;
-    }
-    public void setState(State s) {
-        exitState();
-        state = s;
-        enterState();
-    }
-    public void enterState() {
-        System.out.println("name=["+getName()+"] entering state=["+getState()+"]");
-    }
-    public void exitState() {
-        System.out.println("name=["+getName()+"] exiting state=["+getState()+"]");
-    }
+    protected void changeState(State newState) {
+        if(currentState != null) {
+            currentState.exit(this);
+        }
+        currentState = newState;
 
-    private void updateSleep(long now) {
-        if(--counter <= 0) {
-            setState(State.WAKING);
-            counter = RandomTool.rnd(1,2);
+        if(currentState != null) {
+            currentState.enter(this);
         }
     }
-
-    private void updateWaking(long now) {
-        if(--counter <= 0) {
-            setState(State.HUNGRY);
+    public void changeLocation(Room.Name room) {
+        currRoomNum = room;
+    }
+    public void sleep() {
+        if(fatigue>0) {
+            --fatigue;
         }
     }
-
-
+    public boolean isDoneWorking() {
+        if(fatigue>5+RandomTool.rnd(1,5)) {
+            return true;
+        }
+        return false;
+    }
+    public boolean isDoneSleeping() {
+        return fatigue==0;
+    }
+    @Override
+    public String toString() {
+        return type+" "+getName();
+    }
 }

@@ -9,7 +9,5 @@ public class Ant extends Insect {
     @Override
     public void update(long now) {
         hunger++;
-
     }
-
 }

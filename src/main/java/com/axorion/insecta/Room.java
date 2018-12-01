@@ -4,6 +4,12 @@ import java.util.Collection;
 import java.util.HashMap;
 
 public class Room extends NamedEntity {
+    enum Name {
+        LIMBO,
+        HIVE,
+        KITCHEN,
+        BROOD_CHAMBER
+    }
     protected HashMap<String,Insect> insects = new HashMap<String,Insect>();
 
     public Room(String name) {

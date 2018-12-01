@@ -12,9 +12,9 @@ public class App
         Room kitchen = new Room("Kitchen");
         hive.addRoom(kitchen);
         hive.addInsectToRoom(new Beetle("Bob"),kitchen);
-        hive.addInsectToRoom(new Beetle("Frank"),kitchen);
+//        hive.addInsectToRoom(new Beetle("Frank"),kitchen);
 
-        for(int i=0; i<10; i++) {
+        for(int i=0; i<100; i++) {
             long now = System.currentTimeMillis();
             hive.update(now);
         }
