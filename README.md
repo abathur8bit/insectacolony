@@ -1,9 +1,8 @@
-test
-
 # Insecta Colony
 A simulated insect civilization. 
 
 <https://github.com/abathur8bit/insectacolony>
+
 
 # License
 Copyright 2018 Lee Patterson
