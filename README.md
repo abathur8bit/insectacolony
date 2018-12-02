@@ -1,5 +1,3 @@
-test
-
 # Insecta Colony
 A simulated insect civilization. 
 
