@@ -1,7 +1,7 @@
 package com.axorion.insecta;
 
-/******************************************************************************
- * Copyright 2018 Lee Patterson
+/* *****************************************************************************
+ * Copyright 2018 Lee Patterson <https://github.com/abathur8bit>
  *
  * You may use and modify at will. Please credit me in the source.
  *
@@ -16,17 +16,17 @@ package com.axorion.insecta;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *******************************************************************************/
+ * ******************************************************************************/
 
 /**
  * Base class for any type of insect, handling all the common insect functions.
  * Create your insect by passing in it's name, and the string representation of the type.
  */
 public abstract class Insect extends NamedEntity {
-    private String type;
+    private final String type;
     protected int counter=0;
     protected Colony colony;
-    protected State currentState=null;
+    protected State currentState;
 
     protected int money=0;
     protected int fatigue=0;
@@ -67,10 +67,7 @@ public abstract class Insect extends NamedEntity {
         }
     }
     public boolean isDoneWorking() {
-        if(fatigue>5+RandomTool.rnd(1,5)) {
-            return true;
-        }
-        return false;
+        return fatigue > 5 + RandomTool.rnd(1, 5);
     }
     public boolean isDoneSleeping() {
         return fatigue==0;

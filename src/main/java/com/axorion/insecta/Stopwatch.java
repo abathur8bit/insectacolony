@@ -1,7 +1,7 @@
 package com.axorion.insecta;
 
-/******************************************************************************
- * Copyright 2018 Lee Patterson
+/* *****************************************************************************
+ * Copyright 2018 Lee Patterson <https://github.com/abathur8bit>
  *
  * You may use and modify at will. Please credit me in the source.
  *
@@ -16,7 +16,7 @@ package com.axorion.insecta;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *******************************************************************************/
+ * ******************************************************************************/
 
 import java.util.Date;
 
@@ -90,10 +90,10 @@ public class Stopwatch {
       return 0;
     if(m_stop==null) {
       Date now = new Date();
-      return (long)((now.getTime() - m_start.getTime())/1000);
+      return ((now.getTime() - m_start.getTime())/1000);
     }
       
-    return (long)((m_stop.getTime()-m_start.getTime()) / 1000);
+    return ((m_stop.getTime()-m_start.getTime()) / 1000);
   }
   /** 
   * Get the current elapsed time in milliseconds. If thw stopwatch has
@@ -123,7 +123,7 @@ public class Stopwatch {
   * anything.
   *
   *@return Formated string of the elapsed time.
-  *@see getMilliSeconds, getSeconds()
+  *@see #getMilliSeconds() , #getSeconds()
   */
   public String getFormated() {
     long now = getMilliSeconds();

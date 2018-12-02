@@ -1,7 +1,7 @@
 package com.axorion.insecta;
 
-/******************************************************************************
- * Copyright 2018 Lee Patterson
+/* *****************************************************************************
+ * Copyright 2018 Lee Patterson <https://github.com/abathur8bit>
  *
  * You may use and modify at will. Please credit me in the source.
  *
@@ -16,7 +16,7 @@ package com.axorion.insecta;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *******************************************************************************/
+ * ******************************************************************************/
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class Room extends NamedEntity {
         KITCHEN,
         BROOD_CHAMBER
     }
-    protected HashMap<String,Insect> insects = new HashMap<String,Insect>();
+    protected final HashMap<String,Insect> insects = new HashMap<String,Insect>();
 
     public Room(String name) {
         super(name);

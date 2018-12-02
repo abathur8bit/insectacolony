@@ -1,7 +1,7 @@
 package com.axorion.insecta;
 
-/******************************************************************************
- * Copyright 2018 Lee Patterson
+/* *****************************************************************************
+ * Copyright 2018 Lee Patterson <https://github.com/abathur8bit>
  *
  * You may use and modify at will. Please credit me in the source.
  *
@@ -16,7 +16,7 @@ package com.axorion.insecta;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *******************************************************************************/
+ * ******************************************************************************/
 
 /**
  * Test the state machine by creating a colony with a room and a couple insects.
