@@ -18,6 +18,7 @@ package com.axorion.insecta;
  * limitations under the License.
  *******************************************************************************/
 
+/** Every entity in the world has a name. */
 public class NamedEntity {
     protected String name;
     public NamedEntity(String name) {

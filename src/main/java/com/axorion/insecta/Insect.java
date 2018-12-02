@@ -18,6 +18,10 @@ package com.axorion.insecta;
  * limitations under the License.
  *******************************************************************************/
 
+/**
+ * Base class for any type of insect, handling all the common insect functions.
+ * Create your insect by passing in it's name, and the string representation of the type.
+ */
 public abstract class Insect extends NamedEntity {
     private String type;
     protected int counter=0;
@@ -33,6 +37,7 @@ public abstract class Insect extends NamedEntity {
     public Insect(String name,String type) {
         super(name);
         this.type = type;
+        currentState = EnterColonyStartWorking.getInstance();
     }
     public void update(long now) {
         hunger++;
